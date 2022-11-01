@@ -1,14 +1,19 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class OR_Dice {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
     //Set variables to 0
         int dice1 = 0;
         int dice2 = 0;
         int sixCount = 0;
 
-        //Loop 100 times
-        for (int i = 1; i < 101; i++) {
+        Scanner objScanner = new Scanner(System.in);
+        System.out.println("How many times should I roll the dice?");
+        int rolls = objScanner.nextInt();
+
+        //Loop ??? times
+        for (int i = 1; i < rolls+1; i++) {
             //Roll each dice
             dice1 = roll(6);
             dice2 = roll(6);
@@ -25,7 +30,7 @@ public class OR_Dice {
         }
 
         //Show the final 6 tally.
-        System.out.println("A 6 was thrown " + sixCount + " times out of 100.");
+        System.out.println("A 6 was thrown " + sixCount + " times out of " + rolls + ".");
     }
 
     private static int roll(int sides) {
